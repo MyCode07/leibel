@@ -1,0 +1,29 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section error-404" data-animate data-animate-bottom>
+        <div class="section__container _container">
+            <div class="section__body ">
+                <h1>404 ничего не найдено</h1>
+                <p></p>
+                <a href="/" class="_btn _btn-accent">Вернутся на главную</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')
