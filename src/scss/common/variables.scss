@@ -1,9 +1,17 @@
-$container: 1296;
-$padding: 30;
+$container: 1200;
+$padding: 25;
 $containerWithPadding: $container + ($padding * 2);
 
-
-$accent: #802A18;
-$black: #2B1D14;
+$accent: #37584d;
+$accent_2: #d3bba1;
+$hover: #b68f68;
+$text: #262626;
+$black: #1b2b2a;
 $white: #fff;
-$gray:#9E958D;
+$stroke: rgba(
+    $color: $black,
+    $alpha: 0.5
+);
+$stroke: #e5e5e5;
+$gray: #eeeeee;
+$gray_2: #e8e8e8;

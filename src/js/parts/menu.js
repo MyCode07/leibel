@@ -45,63 +45,62 @@ if (allMenuLinks.length) {
 
 
 // menu arrow buttom
-const arrow = `<button><svg width="14" height="14" viewBox="0 0 14 14">
-<path d="M0 7H7M14 7H7M7 7V0V14" stroke-width="1.2"/>
-</svg>
-</button>`;
+const arrow = `<button><svg width="10" height="7" viewBox="0 0 10 7" fill="none">
+<path d="M1 1.5L5 5.5L9 1.5" stroke-width="1.25" stroke-linecap="round"/>
+</svg></button>`;
 
 // add menu summenu opener button
 const submenuList = document.querySelectorAll('nav ul li');
-if (submenuList.length) {
-    submenuList.forEach(li => {
-        const submenu = li.querySelector('ul');
-        const link = li.querySelector('a');
+// if (submenuList.length) {
+//     submenuList.forEach(li => {
+//         const submenu = li.querySelector('ul');
+//         const link = li.querySelector('a');
 
-        if (submenu) {
-            link.insertAdjacentHTML('afterend', arrow);
-            const btn = li.querySelector('button');
+//         if (submenu) {
+//             link.insertAdjacentHTML('afterend', arrow);
+//             const btn = li.querySelector('button');
 
-            if (btn) {
-                btn.addEventListener('click', function () {
-                    toggleMenu(li)
-                })
-            }
-        }
-    })
+//             if (btn) {
+//                 btn.addEventListener('click', function () {
+//                     toggleMenu(li)
+//                 })
+//             }
+//         }
+//     })
 
-    function toggleMenu(item) {
-        const menu = item.closest('ul');
-        const menuItems = menu.querySelectorAll('li');
+//     function toggleMenu(item) {
+//         const menu = item.closest('ul');
+//         const menuItems = menu.querySelectorAll('li');
 
-        if (!item.hasAttribute('data-open')) {
-            const openitem = menu.querySelector('li[data-open]');
-            if (openitem) {
-                openitem.removeAttribute('data-open')
-            }
+//         if (!item.hasAttribute('data-open')) {
+//             const openitem = menu.querySelector('li[data-open]');
+//             if (openitem) {
+//                 openitem.removeAttribute('data-open')
+//             }
 
-            menuItems.forEach(item => {
-                item.removeAttribute('data-open')
-            })
+//             menuItems.forEach(item => {
+//                 item.removeAttribute('data-open')
+//             })
 
-            item.setAttribute('data-open', 'open')
-        }
-        else {
-            if (!item.closest('.catalog-menu')) {
-                item.removeAttribute('data-open')
-            }
-            else {
-                if (isMobile.any()) {
-                    item.removeAttribute('data-open')
-                }
-            }
-        }
-    }
+//             item.setAttribute('data-open', 'open')
+//         }
+//         else {
+//             if (!item.closest('.catalog-menu')) {
+//                 item.removeAttribute('data-open')
+//             }
+//             else {
+//                 if (isMobile.any()) {
+//                     item.removeAttribute('data-open')
+//                 }
+//             }
+//         }
+//     }
 
-    const catalogMenuFirstItem = document.querySelectorAll('.catalog-menu a');
-    if (catalogMenuFirstItem && isMobile.any()) {
-        toggleMenu(catalogMenuFirstItem[0])
-    }
-}
+//     const catalogMenuFirstItem = document.querySelectorAll('.catalog-menu a');
+//     if (catalogMenuFirstItem && isMobile.any()) {
+//         toggleMenu(catalogMenuFirstItem[0])
+//     }
+// }
 
 
 
@@ -168,15 +167,15 @@ if (openSearchBtn.length) {
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if (!targetEl.hasAttribute('data-open-catalog') && !targetEl.closest('.catalog-menu') &&
-        !targetEl.classList.contains('catalog-menu') && catalogMenu.classList.contains('_open')) {
-        catalogMenu.classList.remove('_open');
-        unLockPadding();
+    // if (!targetEl.hasAttribute('data-open-catalog') && !targetEl.closest('.catalog-menu') &&
+    //     !targetEl.classList.contains('catalog-menu') && catalogMenu.classList.contains('_open')) {
+    //     catalogMenu.classList.remove('_open');
+    //     unLockPadding();
 
-        openCatalogBtns.forEach(btn => {
-            btn.classList.remove('_active');
-        })
-    }
+    //     openCatalogBtns.forEach(btn => {
+    //         btn.classList.remove('_active');
+    //     })
+    // }
 
     if (targetEl.classList.contains('search-popup__close')) {
         searchPopup.classList.remove('_open');

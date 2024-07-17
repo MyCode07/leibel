@@ -6,12 +6,11 @@ body {
     scroll-behavior: smooth;
     font-style: normal;
     line-height: normal;
-    font-family: HarmoniaSansProCyr;
+    font-family: Lato, Halvetica, sans-serif;
     font-weight: 400;
     background-color: $white;
-    color: $black;
+    color: $accent;
     font-size: 16px;
-    letter-spacing: -0.02em;
 
     &._noscroll {
         overflow: hidden;
@@ -43,7 +42,7 @@ main {
     }
 
     @media (max-width: 1024px) {
-        padding-inline: 16px;
+        padding-inline: 15px;
     }
 }
 
@@ -55,4 +54,87 @@ picture {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+._socials {
+    display: flex;
+    gap: 10px;
+
+    li {
+        flex: 0 0 auto;
+    }
+
+    a {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $white;
+
+        svg,
+        img {
+            fill: $accent;
+            width: 50%;
+        }
+    }
+}
+
+._socials-main {
+    display: flex;
+    gap: 20px;
+
+    li {
+        flex: 0 0 auto;
+    }
+
+    a {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        svg,
+        img {
+            width: 100%;
+            height: 100%;
+            flex: 0 0 auto;
+        }
+    }
+}
+
+._btn {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 12px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid currentColor;
+
+    @include adaptive-value("font-size", 20, 16, 1);
+
+    svg {
+        width: 1.2em;
+        fill: none;
+        stroke: currentColor;
+        margin-right: 10px;
+        flex: 0 0 auto;
+    }
+
+    // ._btn-white
+
+    &-white {
+        color: $accent;
+        background-color: $white;
+    }
+
+    // ._btn-border
+
+    &-border {
+    }
 }
