@@ -9,7 +9,7 @@ if (sliders.length) {
         let next = section.querySelector('.next')
         let pagination = section.querySelector('.pagination')
 
-        if (slider.closest('.hero')) {
+        if (slider.closest('.slider')) {
             new Swiper(slider, {
                 modules: [Autoplay, Pagination],
                 slidesPerView: 1,

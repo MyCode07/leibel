@@ -1,0 +1,91 @@
+.form {
+    h3 {
+        color: $text;
+        font-family: "PTSerif";
+        @include adaptive-value("font-size", 28, 20, 1);
+        font-weight: 400;
+        line-height: normal;
+        @include adaptive-value("margin-bottom", 30, 15, 1);
+    }
+    // .form__item
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        input {
+            border: 1px solid $gray_2;
+            height: 50px;
+            padding: 10px;
+            width: 100%;
+
+            color: $text;
+            font-size: 12px;
+        }
+    }
+
+    // .form__bottom
+
+    &__bottom {
+        button {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        label {
+            display: flex;
+            gap: 10px;
+
+            input {
+                display: none;
+            }
+
+            span {
+                color: rgba($color: $text, $alpha: 0.5);
+
+                a {
+                    color: $text;
+                    text-decoration: underline;
+                    transition: opacity 0.3s ease 0s;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+
+                @media (max-width: 425px) {
+                    font-size: 14px;
+                }
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 20px;
+                width: 20px;
+                height: 20px;
+                border-radius: 2px;
+                border: 1px solid $accent;
+                transition: background-color 0.3s ease 0s;
+
+                svg {
+                    opacity: 0;
+                    width: 12px;
+                    height: 8px;
+                    transition: opacity 0.3s ease 0s;
+                }
+            }
+        }
+    }
+}
+
+.form__bottom input:checked + .checkbox {
+    background-color: $accent;
+}
+.form__bottom input:checked + .checkbox svg {
+    opacity: 1;
+}

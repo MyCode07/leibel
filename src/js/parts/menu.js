@@ -6,10 +6,9 @@ import { gsap } from 'gsap'
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.menu');
 const allMenuLinks = document.querySelectorAll('nav ul li a');
-
+const menuCloseBtn = document.querySelector('._close');
 if (burger) {
     burger.addEventListener('click', (e) => {
-        burger.classList.toggle('_active');
         menu.classList.toggle('_open');
 
         if (menu.classList.contains('_open')) {
@@ -30,7 +29,9 @@ if (burger) {
         // }
     })
 }
-
+menuCloseBtn.addEventListener('click', (e) => {
+    menu.classList.remove('_open');
+})
 
 if (allMenuLinks.length) {
     allMenuLinks.forEach(link => {
