@@ -1,0 +1,146 @@
+.menu {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    overflow: hidden;
+    overflow-y: auto;
+    transform: translate(0, -150%);
+    pointer-events: none;
+    transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+    }
+
+    &.menu._open {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+
+    // .menu__body
+
+    &__body {
+        padding: 15px 15px 30px;
+    }
+
+    // .menu__top
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: 2px;
+            background: $accent;
+
+            color: $white;
+            text-align: center;
+            font-family: Lato;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 2px;
+            background: $gray;
+
+            svg {
+                flex: 0 0 auto;
+                width: 14px;
+                height: 14px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // .menu__contacts
+
+    &__contacts {
+    }
+
+    // .menu__catalog
+
+    &__catalog {
+        margin: 30px 0;
+        width: 100%;
+        padding: 10px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            width: calc(100% - 15px);
+        }
+
+        span {
+            text-align: left;
+        }
+
+        .catalog-arrow {
+            width: 12px;
+            height: 7px;
+            margin: 0;
+        }
+    }
+
+    nav {
+        li[data-open="open"] ul {
+            max-height: 100%;
+            margin-top: 10px;
+        }
+
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                a {
+                    margin-right: 15px;
+                }
+
+                ul {
+                    width: 100%;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: all 0.3s ease 0s;
+
+                    & > :not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    li {
+                        a {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+
+                            color: $text;
+                            font-family: Lato;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
