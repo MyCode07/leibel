@@ -128,6 +128,39 @@ picture {
         }
     }
 }
+
+.breadcrumbs {
+    @include adaptive-value("margin-top", 20, 15, 1);
+    @include adaptive-value("margin-bottom", 60, 30, 1);
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $text;
+            font-size: 14px;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+
+            a {
+                span {
+                    opacity: 1;
+                }
+            }
+
+            span {
+                opacity: 0.5;
+            }
+        }
+    }
+}
 .swiper {
     .swiper-slide {
         height: auto;
@@ -223,7 +256,6 @@ picture {
     align-items: center;
     justify-content: center;
     border: 1px solid currentColor;
-
     @include adaptive-value("font-size", 20, 16, 1);
 
     svg {
@@ -251,5 +283,15 @@ picture {
     &-accent {
         color: $white;
         background-color: $accent;
+        border: 1px solid $accent;
+
+        transition: all 0.3s ease 0s;
+        
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $accent_2;
+                border: 1px solid $accent_2;
+            }
+        }
     }
 }

@@ -266,3 +266,149 @@
         @include adaptive-value("font-size", 22, 16, 1);
     }
 }
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $accent_2;
+    border-radius: 4px;
+    padding: 10px;
+    height: 220px;
+
+    @media (max-width: 1024px) {
+        height: 160px;
+    }
+
+    @media (max-width: 768px) {
+        height: 145px;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            img,
+            svg {
+                transform: translate(5px, 5px);
+            }
+        }
+    }
+    img,
+    svg {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        transition: transform 0.3s ease 0s;
+
+        @media (max-width: 1024px) {
+            width: 60px;
+            height: 60px;
+        }
+
+        @media (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    h4 {
+        color: $text;
+        font-family: "PTSerif";
+        @include adaptive-value("font-size", 22, 12, 1);
+    }
+}
+
+.portfolio-item {
+    time {
+        color: #6a6a6a;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 2px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
+    // .portfolio-item__name
+
+    &__name {
+        display: block;
+        margin-bottom: 10px;
+        color: $text;
+        font-size: 18px;
+        font-weight: 600;
+        transition: color 0.3s ease 0s;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+
+    // .portfolio-item__image
+
+    &__image {
+        position: relative;
+        display: block;
+        height: 300px;
+        padding: 15px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            height: 250px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            transition: transform 0.8s ease 0s;
+        }
+    }
+
+    // .portfolio-item__logo
+
+    &__logo {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        border-radius: 2px;
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+
+        img,
+        svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: scale(1) !important;
+        }
+    }
+}

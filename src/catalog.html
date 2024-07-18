@@ -1,0 +1,86 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section pages-hero category-hero">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs ">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>Каталог</span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Каталог</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section catalog category">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__flex">
+                    @@include('./html/sidebar.html')
+                    <div class="catalog__body">
+                        <div class="grid grid-4">
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                            <a href="" class="category-item">
+                                <img src="img/icons/category.svg" alt="">
+                                <h4>Корпоративные подарки</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')
