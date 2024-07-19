@@ -1,4 +1,17 @@
 .form {
+    // .form__top
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        span {
+            color: $accent;
+            @include adaptive-value("font-size", 22, 16, 1);
+        }
+    }
     h3 {
         color: $text;
         font-family: "PTSerif";
@@ -14,14 +27,24 @@
             margin-bottom: 10px;
         }
 
-        input {
+        input,
+        textarea {
             border: 1px solid $gray_2;
             height: 50px;
             padding: 10px;
             width: 100%;
+            border-radius: 2px;
 
             color: $text;
             font-size: 12px;
+
+            @media (max-width: 768px) {
+                height: 40px;
+            }
+        }
+
+        textarea {
+            height: 100px;
         }
     }
 
@@ -34,6 +57,7 @@
         }
 
         label {
+            cursor: pointer;
             display: flex;
             gap: 10px;
 
@@ -71,6 +95,12 @@
                 border-radius: 2px;
                 border: 1px solid $accent;
                 transition: background-color 0.3s ease 0s;
+
+                @media (max-width: 768px) {
+                    width: 16px;
+                    height: 16px;
+                    flex: 0 0 16px;
+                }
 
                 svg {
                     opacity: 0;

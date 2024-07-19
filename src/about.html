@@ -1,0 +1,76 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section pages-hero ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>О компании</span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>О компании</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about-page">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2">
+                    <div class="about-page__image">
+                        <img src="img/about.png" alt="">
+                        <div>
+                            <label>Генеральный директор</label>
+                            <span>Наталья Николаенкова</span>
+                        </div>
+                    </div>
+                    <div class="about-page__content">
+                        <div class="_main-info">
+                            <p>«Экспертность и премиум уровень сервиса при высокой эффективности сувениров — эта идея
+                                вдохновила меня на создание
+                                компании LeibeL.»</p>
+                        </div>
+                        <p>Более 8 лет мы работаем с компаниями и помогаем им найти самые креативные и эффективные
+                            решения в сфере сувенирной
+                            продукции.</p>
+
+                        <h5>Нам доверяют и мы оправдываем доверие.</h5>
+                        <p>Обращайтесь и мы приложим все усилия для взаимовыгодного и комфортного сотрудничества с вами
+                            на долгие годы</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @@include('./html/clients.html')
+
+    @@include('./html/diplomas.html')
+
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')

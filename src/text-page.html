@@ -1,0 +1,84 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section pages-hero ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>Текстовая страница</span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Текстовая страница</h1>
+                <p>Текстовая страница Текстовая страница Текстовая страница Текстовая страница</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section text-box">
+        <div class="section__container _container">
+            <div class="section__body">
+                <h2>Заголовок h2</h2>
+                <p>Нанесение логотипа на сувенирную продукцию превращает простые предметы в эффективные рекламные
+                    инструменты или в модный
+                    мерч. Подарки с логотипами и принтами обеспечивают личный контакт с вашим потребителем и при этом
+                    экономически выгоднее
+                    других способов продвижения продуктов и услуг, событий и брендов.
+                </p>
+
+                <div class="text-box__images grid grid-3">
+                    <img src="img/portfolio.png" alt="">
+                    <img src="img/portfolio.png" alt="">
+                    <img src="img/portfolio.png" alt="">
+                </div>
+
+                <p>Нанесение логотипа на сувенирную продукцию превращает простые предметы в эффективные рекламные
+                    инструменты или в модный
+                    мерч. Подарки с логотипами и принтами обеспечивают личный контакт с вашим потребителем и при этом
+                    экономически выгоднее
+                    других способов продвижения продуктов и услуг, событий и брендов.
+                </p>
+
+                <div class="text-box__big">
+                    <img src="img/portfolio.png" alt="">
+                </div>
+
+                <div class="text-box__big text-box__video">
+                    <button>
+                        <img src="img/icons/youtube.svg" alt="">
+                    </button>
+                    <video playsinline
+                        poster="https://climat.test-yeremyan.site/wp-content/themes/blank-sheet/assets/img/hero-video.png"
+                        muted loop class="_video">
+                        <source src="https://climat.test-yeremyan.site/wp-content/uploads/2024/06/video.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')

@@ -1,0 +1,83 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section pages-hero">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Портфолио</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>Подарки для бизнес партнеров</span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Подарки для бизнес партнеров</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section case">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2">
+                    <div class="case__content">
+                        <div class="case__content-top">
+                            <div class="case__content-info">
+                                <span>Заказчик:</span>
+                                <label>Компания «ORIGAMI»</label>
+                            </div>
+                            <div class="case__content-logo">
+                                <img src="img/icons/origami.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="_main-info">
+                            <span>Задача: </span>
+                            <p>Сформировать набор подарков для партнеров компании при личных встречах и на мероприятиях.
+                                Продукция должна отражать
+                                ценности компании — стабильность, надежность.</p>
+                        </div>
+                    </div>
+                    <div class="case__image">
+                        <img src="img/portfolio.png" alt="">
+                    </div>
+                </div>
+                <div class="case__solution">
+                    <span>Решение:</span>
+                    <p>Бейсболка из денима индивидуального пошива с вышивкой; аккумуляторы беспроводные, компактные, но
+                        при этом емкие с
+                        уф-печатью логотипа; брелок-открывалка металлический с гравировкой логотипа в индивидуальной
+                        упаковке; современная
+                        холщовая сумка с регулируемой ручкой.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')

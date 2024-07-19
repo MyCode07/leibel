@@ -12,7 +12,7 @@
 })
 
 <main>
-    <section class="section pages-hero category-hero">
+    <section class="section pages-hero ">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="breadcrumbs ">
@@ -24,11 +24,17 @@
                             <div>/</div>
                         </li>
                         <li>
-                            <span>Каталог</span>
+                            <a href="">
+                                <span>Каталог</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>Зонты</span>
                         </li>
                     </ul>
                 </div>
-                <h1>Каталог</h1>
+                <h1>Зонты</h1>
             </div>
         </div>
     </section>
@@ -39,39 +45,214 @@
                 <div class="section__flex">
                     @@include('./html/sidebar.html')
                     <div class="catalog__body">
-                        <div class="grid grid-4">
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
-                            <a href="" class="category-item">
-                                <img src="img/icons/category.svg" alt="">
-                                <h4>Корпоративные подарки</h4>
-                            </a>
+                        <div class="filters-area">
+                            <div class="grid">
+                                <div class="filter-fast filter-brand">
+                                    <div class="select-input _multiple">
+                                        <span data-id="1">Цвет</span>
+                                        <svg class="catalog-arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 0.5L6 5.5L11 0.5" stroke="#37584D" stroke-width="1.25"></path>
+                                        </svg>
+                                        <div class="select">
+                                            <div class="select-body">
+                                                <label data-id="red" for="select-brend-red">
+                                                    Красный <input type="checkbox" id="select-brend-red" value="red">
+                                                </label>
+                                                <label data-id="black" for="select-brend-black">
+                                                    Черный <input type="checkbox" id="select-brend-black" value="black">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-fast filter-price">
+                                    <div class="select-input">
+                                        <label data-id="1">Цена</label>
+                                        <svg class="catalog-arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 0.5L6 5.5L11 0.5" stroke="#37584D" stroke-width="1.25"></path>
+                                        </svg>
+                                        <div class="select">
+                                            <div class="select-body">
+                                                <div class="range" data-min="18900" data-max="181900" data-step="100">
+                                                    <div class="range-slider"></div>
+                                                    <div class="range-output">
+                                                        <div class="range-min"><ins>18 900</ins> ₽</div>
+                                                        <div class="range-max"><ins>181 900</ins> ₽</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-fast filter-sort">
+                                    <div class="select-input ">
+                                        <span data-id="0">
+                                            Сначала новые </span>
+                                        <svg class="catalog-arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 0.5L6 5.5L11 0.5" stroke="#37584D" stroke-width="1.25"></path>
+                                        </svg>
+                                        <div class="select">
+                                            <div class="select-body">
+                                                <label data-id="0">
+                                                    <a href="" data-sort="date">Сначала новые</a>
+                                                </label>
+                                                <label data-id="1">
+                                                    <a href="" data-sort="price">По цене ↑</a>
+                                                </label>
+                                                <label data-id="2">
+                                                    <a href="" data-sort="price-desc">По цене
+                                                        ↓</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="active-filters">
+                                <div class="active-filters__body">
+                                    <button class="reset-filters" data-reset-filters>
+                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M3.52604 4.00173L0.000129797 7.52764L0.472481 7.99999L3.99839 4.47408L7.52431 8.00001L7.99667 7.52766L4.47074 4.00173L8.00012 0.472352L7.52777 0L3.99839 3.52938L0.472352 0.00334277L0 0.475694L3.52604 4.00173Z"
+                                                fill="#262626" />
+                                        </svg>
+                                        <span>Сбросить фильтры</span>
+                                    </button>
+
+                                    <ol>
+                                        <li>
+                                            <span>Серый</span>
+                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M3.52604 4.00173L0.000129797 7.52764L0.472481 7.99999L3.99839 4.47408L7.52431 8.00001L7.99667 7.52766L4.47074 4.00173L8.00012 0.472352L7.52777 0L3.99839 3.52938L0.472352 0.00334277L0 0.475694L3.52604 4.00173Z"
+                                                    fill="#262626" />
+                                            </svg>
+                                        </li>
+                                        <li>
+                                            <span>цена min 150 ₽</span>
+                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M3.52604 4.00173L0.000129797 7.52764L0.472481 7.99999L3.99839 4.47408L7.52431 8.00001L7.99667 7.52766L4.47074 4.00173L8.00012 0.472352L7.52777 0L3.99839 3.52938L0.472352 0.00334277L0 0.475694L3.52604 4.00173Z"
+                                                    fill="#262626" />
+                                            </svg>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__grid">
+                            <article class="cart-item">
+                                <a href="" class="cart-item__image">
+                                    <label for="" class="cart-item__discount">
+                                        %
+                                    </label>
+                                    <img src="img/zont.png" alt="">
+                                </a>
+                                <a href="" class="cart-item__name">Зонт-трость Manifest со светоотражающим куполом,
+                                    серый</a>
+                                <div>
+                                    <div>
+                                        <span>2 828 руб</span>
+                                        <del class="old-price">2 828 руб</del>
+                                        <label>В наличии</label>
+                                    </div>
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href='@img/svg/icons.svg#cart' />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="cart-item">
+                                <a href="" class="cart-item__image">
+                                    <label for="" class="cart-item__discount">
+                                        %
+                                    </label>
+                                    <img src="img/zont.png" alt="">
+                                </a>
+                                <a href="" class="cart-item__name">Зонт-трость Manifest со светоотражающим куполом,
+                                    серый</a>
+                                <div>
+                                    <div>
+                                        <span>2 828 руб</span>
+                                        <del class="old-price">2 828 руб</del>
+                                        <label>В наличии</label>
+                                    </div>
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href='@img/svg/icons.svg#cart' />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="cart-item">
+                                <a href="" class="cart-item__image">
+                                    <label for="" class="cart-item__discount">
+                                        %
+                                    </label>
+                                    <img src="img/zont.png" alt="">
+                                </a>
+                                <a href="" class="cart-item__name">Зонт-трость Manifest со светоотражающим куполом,
+                                    серый</a>
+                                <div>
+                                    <div>
+                                        <span>2 828 руб</span>
+                                        <label>В наличии</label>
+                                    </div>
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href='@img/svg/icons.svg#cart' />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="cart-item">
+                                <a href="" class="cart-item__image">
+                                    <img src="img/zont.png" alt="">
+                                </a>
+                                <a href="" class="cart-item__name">Зонт-трость Manifest со светоотражающим куполом,
+                                    серый</a>
+                                <div>
+                                    <div>
+                                        <span>2 828 руб</span>
+                                        <label>В наличии</label>
+                                    </div>
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href='@img/svg/icons.svg#cart' />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="cart-item">
+                                <a href="" class="cart-item__image">
+                                    <label for="" class="cart-item__discount">
+                                        %
+                                    </label>
+                                    <img src="img/zont.png" alt="">
+                                </a>
+                                <a href="" class="cart-item__name">Зонт-трость Manifest со светоотражающим куполом,
+                                    серый</a>
+                                <div>
+                                    <div>
+                                        <span>2 828 руб</span>
+                                        <del class="old-price">2 828 руб</del>
+                                        <label>В наличии</label>
+                                    </div>
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href='@img/svg/icons.svg#cart' />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,13 @@
 import { maskInputs } from "./static/inputmask.js";
 
 import "./parts/sliders.js";
-// import "./parts/popup.js";
+import "./parts/filters.js";
+// import "./parts/products-filter.js";
+import { range } from "./parts/range.js";
+import "./parts/popup.js";
  import "./parts/menu.js";
 
-
+range();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
 
 import { Fancybox } from "@fancyapps/ui";

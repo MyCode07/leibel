@@ -1,0 +1,105 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404",
+"description": "Страница не найдена.",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="section pages-hero ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                            <div>/</div>
+                        </li>
+                        <li>
+                            <span>Контакты</span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Контакты</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contacts">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2">
+                    <div class="contacts__content">
+                        <ul>
+                            <li>
+                                <label>Телефон:</label>
+                                <a href="" target="_blank">+7 (499) 391-20-42</a>
+                                <a href="" target="_blank">+7 (499) 391-20-42</a>
+                            </li>
+                            <li>
+                                <label>E-mail:</label>
+                                <a href="" target="_blank">info@leibel.ru</a>
+                            </li>
+                            <li>
+                                <label>Наш адрес:</label>
+                                <a href="" target="_blank">105066, г. Москва, ул. Нижняя Красносельская, д. 35, стр. 50,
+                                    офис 11А</a>
+                            </li>
+                        </ul>
+                        <ul class="_socials-main">
+                            <li><a href="" target="_blank"><img src="img/icons/tg.svg" alt=""></a></li>
+                            <li><a href="" target="_blank"><img src="img/icons/wh.svg" alt=""></a></li>
+                        </ul>
+                    </div>
+
+                    <form action="#" method="post" class="form">
+                        <h3>Оставьте заявку</h3>
+                        <div class="form__item" data-required="">
+                            <input type="text" name="your_name" placeholder="Имя *">
+                        </div>
+                        <div class="form__item" data-required="">
+                            <input type="text" name="your_phone" placeholder="Телефон *">
+                        </div>
+                        <div class="form__item" data-required="">
+                            <input type="text" name="your_mail" placeholder="E-mail адрес *">
+                        </div>
+                        <div class="form__item" data-required="">
+                            <textarea type="text" name="your_comments" placeholder="Комментарий"></textarea>
+                        </div>
+                        <div class="form__bottom">
+                            <button type="submit" class="_btn _btn-accent">
+                                <span>Отправить</span>
+                            </button>
+                            <label>
+                                <input type="checkbox">
+                                <span class="checkbox">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"
+                                        fill="none">
+                                        <path
+                                            d="M5.44124 8.62158C5.43546 8.62158 5.42944 8.62158 5.42342 8.62135C5.23829 8.61649 5.06263 8.53804 4.93582 8.40312L1.15946 4.39187C0.896563 4.11277 0.909986 3.6733 1.18908 3.4104C1.46818 3.14774 1.90765 3.16093 2.17055 3.44003L5.46647 6.94122L11.8551 0.814767C12.1314 0.549556 12.5714 0.558351 12.8366 0.835364C13.102 1.11215 13.0928 1.55162 12.816 1.81706L5.92168 8.42858C5.79231 8.55262 5.6199 8.62158 5.44124 8.62158Z"
+                                            fill="white" />
+                                    </svg>
+                                </span>
+                                <span>Даю согласие на обработку <a href="">персональных данных</a> </span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')
