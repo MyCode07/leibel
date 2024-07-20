@@ -543,6 +543,7 @@
     &__name {
         max-width: 300px;
         width: 100%;
+        height: fit-content;
         transition: color 0.3s ease 0s;
 
         @media (any-hover: hover) {
