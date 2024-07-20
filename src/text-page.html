@@ -1,15 +1,8 @@
 @@include('./html/head.html', {
-"title":"Ошибка 404",
-"description": "Страница не найдена.",
+"title":"Текстовая страница",
 })
 
-@@include('./html/menu.html', {
-"class":"white",
-})
-
-@@include('./html/header.html', {
-"class":"white",
-})
+@@include('./html/header.html')
 
 <main>
     <section class="section pages-hero ">
@@ -58,21 +51,12 @@
                     других способов продвижения продуктов и услуг, событий и брендов.
                 </p>
 
-                <div class="text-box__big">
-                    <img src="img/portfolio.png" alt="">
-                </div>
+                <img src="img/portfolio.png" alt="">
 
-                <div class="text-box__big text-box__video">
-                    <button>
-                        <img src="img/icons/youtube.svg" alt="">
-                    </button>
-                    <video playsinline
-                        poster="https://climat.test-yeremyan.site/wp-content/themes/blank-sheet/assets/img/hero-video.png"
-                        muted loop class="_video">
-                        <source src="https://climat.test-yeremyan.site/wp-content/uploads/2024/06/video.mp4"
-                            type="video/mp4">
-                    </video>
-                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mY-slGeV3Qw?si=Bxpl2TTTVWSh1Qy7"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>

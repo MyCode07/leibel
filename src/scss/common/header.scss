@@ -1,4 +1,13 @@
 .header {
+    z-index: 15;
+    background-color: $white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    transition: box-shadow 0.3s ease 0s;
+
     nav {
         margin-inline: auto;
 
@@ -45,13 +54,24 @@
         }
     }
 
+    &._sticky {
+        .header__top {
+            max-height: 0;
+            pointer-events: none;
+        }
+
+        box-shadow: 0px 0px 8px 0px rgba($color: #000000, $alpha: 0.15);
+    }
+
     // .header__top
 
     &__top {
-        padding: 5px 0;
         background-color: $accent;
         color: $white;
         font-size: 14px;
+        overflow: hidden;
+        transition: max-height 0.3s ease 0s;
+        max-height: 50px;
 
         // .header__top-body
 
@@ -60,6 +80,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 30px;
+            padding: 5px 0;
 
             @media (max-width: 1200px) {
                 gap: 20px;
@@ -121,6 +142,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            @media (max-width: 768px) {
+                position: relative;
+            }
         }
 
         nav {
@@ -150,7 +175,8 @@
     &__catalog {
         font-size: 16px !important;
         transition: all 0.3s ease 0s;
-        
+        cursor: pointer;
+
         * {
             pointer-events: none;
         }
@@ -180,6 +206,10 @@
     // .header__actions
 
     &__actions {
+        @media (min-width: 769px) {
+            position: relative;
+        }
+
         display: flex;
         gap: 20px;
 
@@ -213,6 +243,7 @@
                 width: 45%;
                 fill: currentColor;
                 flex: 0 0 auto;
+                pointer-events: none;
             }
         }
     }
@@ -223,12 +254,102 @@
         // .header__search-form
 
         &-form {
-            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+
+            transform: translate(calc(-100% + 44px), 0);
+            width: 464px;
+
+            display: flex;
+            padding: 6px 15px;
+            border-radius: 4px;
+            background-color: $white;
+            border: 1px solid $gray;
+            height: 44px;
+            gap: 10px;
+
+            opacity: 0;
+            pointer-events: none;
+
+            &._active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            @media (max-width: 1024px) {
+                transform: translate(calc(-100% + 35px), 0);
+            }
+
+            @media (max-width: 768px) {
+                left: 0;
+                transform: translate(0, 0);
+                width: 100%;
+            }
+
+            form {
+                display: flex;
+                flex: 1 1 auto;
+                gap: 10px;
+
+                input {
+                    flex: 1 1 auto;
+                }
+
+                button {
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $accent;
+                    color: $white;
+                    font-size: 12px;
+                    padding: 8px 15px;
+                    border-radius: 2px;
+                    height: 30px;
+
+                    transition: all 0.3s ease 0s;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            background-color: $accent_2;
+                        }
+                    }
+                }
+            }
         }
 
         // .header__search-close
 
         &-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            width: 30px;
+            height: 30px;
+
+            background-color: $gray;
+            border-radius: 2px;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    svg,
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            svg,
+            img {
+                width: 14px;
+                flex: 0 0 auto;
+                stroke: $black;
+                transition: all 0.3s ease 0s;
+                pointer-events: none;
+            }
         }
     }
 

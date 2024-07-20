@@ -13,8 +13,11 @@
 // load swiper
 @import "../../node_modules/swiper/swiper";
 
-// load fancybox
-@import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox";
+// load dhx-suite.min
+@import "parts/dhx-suite.min";
+
+// load swiper
+@import "../../node_modules/swiper/swiper";
 
 // load common
 @import "common/common";

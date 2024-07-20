@@ -14,6 +14,7 @@ if (sliders.length) {
                 modules: [Autoplay, Pagination],
                 slidesPerView: 1,
                 loop: true,
+                spaceBetween: 20,
                 pagination: {
                     el: pagination,
                     clickable: true,

@@ -29,6 +29,8 @@ body {
 
 main {
     flex: 1 1 auto;
+
+    @include adaptive-value("padding-top", 143, 103, 1);
 }
 
 ._container {
@@ -74,6 +76,10 @@ picture {
     height: auto;
 }
 
+[data-open-popup] * {
+    pointer-events: none;
+}
+
 .sidebar {
     min-width: 260px;
 
@@ -97,6 +103,15 @@ picture {
                 border-bottom: 1px solid $gray_2;
             }
 
+            svg {
+                stroke: currentColor;
+                transition: all 0.3s ease 0s;
+            }
+
+            a {
+                transition: all 0.3s ease 0s;
+            }
+
             & > li {
                 display: flex;
                 align-items: center;
@@ -105,8 +120,17 @@ picture {
 
                 &[data-open="open"] {
                     ul {
-                        max-height: 100%;
-                        margin-top: 20px;
+                        max-height: 300px;
+                    }
+
+                    svg {
+                        transform: rotate(180deg);
+                        stroke: $accent_2;
+                    }
+
+                    & > a {
+                        font-weight: 600;
+                        color: $accent_2;
                     }
                 }
 
@@ -119,7 +143,29 @@ picture {
                 ul {
                     max-height: 0;
                     overflow: hidden;
-                    transition: all 0.3s ease 0s;
+                    transition: max-height 0.3s ease 0s;
+                    flex: 0 0 100%;
+                    width: 100%;
+
+                    // overflow-y: auto;
+                    // padding-right: 10px;
+
+                    // @media (any-hover: hover) {
+                    //     &::-webkit-scrollbar {
+                    //         width: 6px;
+                    //         background-color: $gray;
+                    //         border-radius: 100px;
+                    //     }
+
+                    //     &::-webkit-scrollbar-thumb {
+                    //         background-color: $accent;
+                    //         border-radius: 100px;
+                    //     }
+                    // }
+
+                    & > :first-child {
+                        margin-top: 20px;
+                    }
 
                     & > :not(:last-child) {
                         margin-bottom: 8px;
@@ -167,6 +213,7 @@ picture {
         }
     }
 }
+
 .swiper {
     .swiper-slide {
         height: auto;
@@ -312,6 +359,8 @@ picture {
     border: 1px solid currentColor;
     @include adaptive-value("font-size", 20, 16, 1);
 
+    transition: all 0.3s ease 0s;
+
     span {
         line-height: 100%;
     }
@@ -333,6 +382,13 @@ picture {
     &-white {
         color: $accent;
         background-color: $white;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $accent;
+                color: $white;
+            }
+        }
     }
 
     // ._btn-border
@@ -347,12 +403,10 @@ picture {
         background-color: $accent;
         border: 1px solid $accent;
 
-        transition: all 0.3s ease 0s;
-
         @media (any-hover: hover) {
             &:hover {
                 background-color: $accent_2;
-                border: 1px solid $accent_2;
+                border-color: $accent_2;
             }
         }
     }

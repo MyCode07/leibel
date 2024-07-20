@@ -18,10 +18,6 @@ document.addEventListener('click', function (e) {
 
     if ((targetEl.closest('.select-body') || targetEl.closest('.select-input')) && targetEl.hasAttribute('data-id')) {
         const select = targetEl.closest('.select-input');
-        const label = select.querySelector('label')
-
-        label.textContent = targetEl.textContent
-        label.dataset.id = targetEl.dataset.id
         select.classList.remove('_active')
     }
 

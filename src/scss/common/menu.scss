@@ -1,6 +1,6 @@
 .menu {
     position: fixed;
-    z-index: 5;
+    z-index: 16;
     left: 0;
     top: 0;
     width: 100%;
@@ -17,7 +17,7 @@
         display: block;
     }
 
-    &.menu._open {
+    &._open {
         transform: translate(0, 0);
         pointer-events: all;
     }
@@ -71,6 +71,158 @@
         }
     }
 
+    nav {
+        li[data-open="open"] {
+            & > ul {
+                max-height: 50vh;
+            }
+
+            & > a {
+                color: $accent_2;
+                font-weight: 600;
+            }
+
+            & > button svg {
+                transform: rotate(180deg);
+                stroke: $accent_2;
+            }
+        }
+
+        ul {
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                svg {
+                    transition: all 0.3s ease 0s;
+                    stroke: currentColor;
+                }
+
+                a {
+                    margin-right: 15px;
+                    transition: all 0.3s ease 0s;
+                }
+
+                ul {
+                    flex: 0 0 100%;
+                    width: 100%;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: all 0.3s ease 0s;
+
+                    & > :first-child {
+                        margin-top: 10px;
+                    }
+
+                    & > :not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    li {
+                        a {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            ul {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    // .menu__catalog
+
+    &__catalog {
+        flex: 1 1 auto;
+
+        border: 1px solid currentColor;
+        border-radius: 4px;
+        padding: 10px 15px;
+        margin: 30px 0;
+
+        // .menu__catalog-btn
+
+        &-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease 0s;
+
+            svg:not(.catalog-arrow) {
+                width: 20px;
+                stroke: currentColor;
+                fill: none;
+            }
+
+            .catalog-arrow {
+                margin-left: auto;
+                width: 12px;
+                height: 7px;
+                stroke: currentColor;
+                transition: all 0.3s ease 0s;
+            }
+
+            * {
+                pointer-events: none;
+            }
+        }
+
+        &._open {
+            .menu__catalog-btn {
+                color: $accent_2;
+                padding-bottom: 15px;
+
+                .catalog-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+
+            & > ul {
+                max-height: 50vh;
+            }
+        }
+
+        & > ul {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease 0s;
+
+            overflow-y: auto;
+
+            & > :first-child {
+            }
+        }
+
+        ul {
+            overflow-y: auto;
+        }
+    }
+
+    // .menu__menu
+
+    &__menu {
+        & > :not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        & > ul {
+            & > :not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
     // .menu__contacts
 
     &__contacts {
@@ -82,116 +234,17 @@
         div {
             display: flex;
             align-items: center;
-            gap: 5px;
             margin-top: 15px;
+            gap: 15px;
 
-            & > :last-child {
-                margin-left: 10px;
-            }
-        }
-
-        .social {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            background-color: $accent;
-            width: 30px;
-            height: 30px;
-
-            svg {
-                flex: 0 0 auto;
-                width: 14px;
-                height: 14px;
-                fill: $white;
-            }
-        }
-    }
-
-    // .menu__catalog
-
-    &__catalog {
-        margin: 30px 0;
-        width: 100%;
-        padding: 10px 15px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-
-        a {
-            display: flex;
-            align-items: center;
-            width: calc(100% - 15px) !important;
-            margin: 0 !important;
-        }
-
-        span {
-            text-align: left;
-        }
-
-        .catalog-arrow {
-            width: 12px;
-            height: 7px;
-            margin: 0;
-        }
-    }
-
-    nav {
-        flex: 1 1 auto;
-
-        li[data-open="open"] ul {
-            max-height: 100%;
-            margin-top: 10px;
-        }
-
-        ul {
-            li {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-
+            ._socials {
                 a {
-                    margin-right: 15px;
-                }
+                    background-color: $accent;
 
-                ul {
-                    width: 100%;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: all 0.3s ease 0s;
-
-                    & > :not(:last-child) {
-                        margin-bottom: 10px;
-                    }
-
-                    li {
-                        a {
-                            display: block;
-                            width: 100%;
-                            text-align: left;
-
-                            color: $text;
-                            font-family: Lato;
-                            font-weight: 500;
-                        }
+                    svg {
+                        fill: $white;
                     }
                 }
-            }
-        }
-
-        div {
-            & > :not(:last-child) {
-                margin-bottom: 15px;
-            }
-            &:not(:last-child) {
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            ._btn {
-                height: fit-content;
             }
         }
     }

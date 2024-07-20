@@ -6,8 +6,9 @@ import "./parts/filters.js";
 import { range } from "./parts/range.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
-import "./parts/header.js";
+import { stickyHeader } from "./parts/header.js";
 
+stickyHeader();
 range();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
 
