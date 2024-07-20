@@ -677,8 +677,16 @@
     backdrop-filter: none;
     height: fit-content;
 
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
     &._open {
-        top: 150px;
+        top: 143px;
+
+        @media (max-width: 1200px) {
+            top: 139px;
+        }
     }
 
     .grid {
@@ -803,6 +811,13 @@
                         display: flex;
                         align-items: center;
                         gap: 10px;
+                        transition: opacity 0.3s ease 0s;
+
+                        @media (any-hover: hover) {
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
 
                         @media (max-width: 768px) {
                             font-size: 14px;

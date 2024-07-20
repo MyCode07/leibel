@@ -149,6 +149,28 @@
 
     &__catalog {
         font-size: 16px !important;
+        transition: all 0.3s ease 0s;
+        
+        * {
+            pointer-events: none;
+        }
+
+        ._close {
+            display: none;
+        }
+
+        &._open {
+            background-color: $accent;
+            color: $white;
+
+            svg {
+                display: none;
+            }
+
+            ._close {
+                display: block;
+            }
+        }
 
         @media (max-width: 1024px) {
             display: none;

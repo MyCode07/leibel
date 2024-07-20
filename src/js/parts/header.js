@@ -21,3 +21,13 @@ export const stickyHeader = () => {
     sticky();
     window.addEventListener('scroll', sticky);
 }
+
+const headerCatalogOpenBtn = document.querySelector('.header__catalog');
+const popup = document.getElementById('catalog');
+
+if (headerCatalogOpenBtn) {
+    headerCatalogOpenBtn.addEventListener('click', (e) => {
+        headerCatalogOpenBtn.classList.toggle('_open');
+        popup.classList.toggle('_open')
+    })
+}
