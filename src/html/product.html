@@ -1,0 +1,25 @@
+<article class="product-item">
+    <a href="" class="product-item__image">
+        <label for="" class="product-item__discount">
+            %
+        </label>
+        <img src="img/zont.png" alt="">
+    </a>
+    <a href="" class="product-item__name">Зонт-трость Manifest со светоотражающим куполом,
+        серый</a>
+    <div class="product-item__info">
+        <div>
+            <div class="product-item__price">
+                <span>2 828 руб</span>
+                <del class="old-price">2 828 руб</del>
+            </div>
+            <label class="product-item__stock">В наличии</label>
+            @@include('qty.html',{})
+        </div>
+        <button class="add-to-cart">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <use xlink:href='@img/svg/icons.svg#cart' />
+            </svg>
+        </button>
+    </div>
+</article>

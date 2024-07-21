@@ -47,22 +47,29 @@
                         <div class="swiper main-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="img/zont.png" />
+                                    <a href="img/zont.png" data-fancybox="product">
+                                        <img src="img/zont.png" />
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/zont.png" />
+                                    <a href="https://swiperjs.com/demos/images/nature-6.jpg" data-fancybox="product">
+                                        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                    <a href="" data-fancybox="product">
+                                        <img src="img/zont.png" />
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/zont.png" />
+                                    <a href="https://swiperjs.com/demos/images/nature-7.jpg" data-fancybox="product">
+                                        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="img/zont.png" />
+                                    <a href="img/zont.png" data-fancybox="product">
+                                        <img src="img/zont.png" />
+                                    </a>
                                 </div>
                             </div>
                             <div class="pagination"></div>
@@ -101,23 +108,7 @@
                                 <del class="old-price">2 828 руб</del>
                             </div>
                             <div class="product__actions">
-                                <div class="quantity">
-                                    <span class="qty-btn minus">
-                                        <svg viewBox="0 0 15 1">
-                                            <line y1="0.5" x2="15" y2="0.5"></line>
-                                        </svg>
-
-                                    </span>
-                                    <input type="text" id="" class="qty" data-step="1" data-min="1" data-max=""
-                                        name="quantity" value="1" title="Qty" placeholder="" inputmode="numeric">
-                                    <span class="inc qty-btn plus">
-                                        <span class="qty-btn plus">
-                                            <svg viewBox="0 0 15 15">
-                                                <path d="M0 7.5H15M7.5 0L7.5 15"></path>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                </div>
+                                @@include('html/qty.html',{})
                                 <button class="_btn _btn-accent">
                                     <span>В Корзину</span>
                                 </button>

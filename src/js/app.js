@@ -6,8 +6,10 @@ import "./parts/filters.js";
 import { range } from "./parts/range.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
-import "./parts/video.js";
 import { stickyHeader } from "./parts/header.js";
+
+import './parts/personVideo.js'
+import './parts/quantity.js'
 
 stickyHeader();
 range();

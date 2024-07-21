@@ -449,7 +449,12 @@ picture {
 
     .qty-btn {
         cursor: pointer;
+
         svg {
+            pointer-events: none;
+        }
+
+        * {
             pointer-events: none;
         }
     }
@@ -470,6 +475,10 @@ picture {
         height: 60px;
         bottom: 15px;
         right: 15px;
+    }
+
+    * {
+        pointer-events: none;
     }
 
     .close {
@@ -548,10 +557,6 @@ picture {
         width: 220px;
         height: 320px;
 
-        @media (max-width: 768px) {
-            width: 75%;
-        }
-
         .pause {
             display: block;
         }
@@ -563,4 +568,15 @@ picture {
             border-radius: 4px;
         }
     }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
