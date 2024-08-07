@@ -18,10 +18,14 @@ if (burger) {
     })
 }
 
-menuCloseBtn.addEventListener('click', (e) => {
-    menu.classList.remove('_open');
-    unLockPadding();
-})
+
+if (menuCloseBtn) {
+    menuCloseBtn.addEventListener('click', (e) => {
+        menu.classList.remove('_open');
+        unLockPadding();
+    })
+}
+
 
 if (allMenuLinks.length) {
     allMenuLinks.forEach(link => {
@@ -116,5 +120,9 @@ document.addEventListener('click', function (e) {
 
     if (targetEl == catalogPopup) {
         headerCatalogOpenBtn.classList.remove('_open');
+    }
+
+    if (!targetEl.closest('li[data-open]') && !targetEl.closest('nav') && document.querySelector('li[data-open]')) {
+        document.querySelector('li[data-open]').removeAttribute('data-open')
     }
 })

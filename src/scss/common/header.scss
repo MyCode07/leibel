@@ -36,6 +36,7 @@
 
                     svg {
                         stroke: currentColor;
+                        transition: all 0.3s ease 0s;
                     }
                 }
             }
@@ -43,13 +44,57 @@
 
         ul {
             ul {
+                min-width: 160px;
                 position: absolute;
+                left: 0;
                 top: 100%;
                 opacity: 0;
                 pointer-events: none;
+                z-index: 1;
+
+                transition: all 0.3s ease 0s;
+
+                padding: 15px;
+                background-color: $accent;
+                color: $white;
+                font-size: 14px;
+
+                & > :not(:last-child) {
+                    margin-bottom: 10px;
+                }
             }
 
             a {
+            }
+
+            li {
+                position: relative;
+
+                &[data-open="open"] {
+                    ul {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+
+                    button svg {
+                        transform: rotate(180deg);
+                        stroke: $accent_2;
+                    }
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        ul {
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+
+                        button svg {
+                            transform: rotate(180deg);
+                            stroke: $accent_2;
+                        }
+                    }
+                }
             }
         }
     }
@@ -58,6 +103,7 @@
         .header__top {
             max-height: 0;
             pointer-events: none;
+            overflow: hidden;
         }
 
         box-shadow: 0px 0px 8px 0px rgba($color: #000000, $alpha: 0.15);
@@ -69,7 +115,6 @@
         background-color: $accent;
         color: $white;
         font-size: 14px;
-        overflow: hidden;
         transition: max-height 0.3s ease 0s;
         max-height: 50px;
 

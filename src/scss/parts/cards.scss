@@ -185,7 +185,6 @@
     }
 }
 
-
 .slider-item {
     border-radius: 4px;
     overflow: hidden;
@@ -220,7 +219,7 @@
         p {
             color: $white !important;
         }
-    } 
+    }
 
     h4 {
         color: $accent;
@@ -276,10 +275,18 @@
 
     &__right {
         position: relative;
-        min-height: 320px;
+        min-height: 500px;
         flex: 1 1 auto;
         border-radius: 4px;
         overflow: hidden;
+
+        @media (max-width: 1200px) {
+            min-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            min-height: 320px;
+        }
 
         img {
             position: absolute;
