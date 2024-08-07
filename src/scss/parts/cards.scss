@@ -185,6 +185,7 @@
     }
 }
 
+
 .slider-item {
     border-radius: 4px;
     overflow: hidden;
@@ -192,7 +193,13 @@
 
     @media (min-width: 769px) {
         display: grid;
-        grid-template-columns: 360px 1fr;
+        grid-template-columns: 400px 1fr;
+        gap: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @media (max-width: 768px) {
@@ -201,57 +208,67 @@
     }
 
     &.slider-item-first {
-        @media (min-width: 769px) {
-            grid-template-columns: repeat(2, 1fr);
+        .slider-item__left {
+            background-color: $accent_2 !important;
+            border: none;
         }
 
-        h4,
-        p,
-        span {
-            text-align: left;
+        h4 {
+            color: $white !important;
         }
-    }
+
+        p {
+            color: $white !important;
+        }
+    } 
 
     h4 {
-        color: $text;
+        color: $accent;
         font-family: "PTSerif";
         @include adaptive-value("font-size", 30, 18, 1);
-        text-align: center;
-    }
-    p {
-        color: $text;
-        @include adaptive-value("font-size", 24, 16, 1);
-        text-align: center;
+        line-height: 100%;
     }
 
-    span {
-        color: $text;
-        @include adaptive-value("font-size", 22, 14, 1);
-        text-align: center;
+    p {
+        max-width: 375px;
+        width: 100%;
+        color: $accent;
+        @include adaptive-value("font-size", 18, 14, 1);
     }
 
     // .slider-item__left
 
     &__left {
-        padding: 100px 40px 100px 20px;
+        padding: 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        gap: 25px;
-        background-color: $accent_2;
+        gap: 50px;
+        background-color: $white;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid $stroke;
 
         @media (max-width: 768px) {
-            padding: 20px;
-            gap: 15px;
-            flex: 1 1 auto;
+            padding: 15px;
         }
 
         img {
-            height: 80px;
-            @media (max-width: 768px) {
-                height: 60px;
-            }
+            position: absolute;
+            left: 50%;
+            bottom: -80px;
+            width: unset;
+            height: unset;
+            max-width: unset;
+            transform: translate(-50%, 0);
+            mix-blend-mode: soft-light;
+        }
+
+        @media (max-width: 768px) {
+            padding: 20px;
+            gap: 30px;
+            flex: 1 1 auto;
         }
     }
 
@@ -261,6 +278,8 @@
         position: relative;
         min-height: 320px;
         flex: 1 1 auto;
+        border-radius: 4px;
+        overflow: hidden;
 
         img {
             position: absolute;
