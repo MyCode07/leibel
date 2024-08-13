@@ -296,6 +296,11 @@
     // .header__search
 
     &__search {
+        border-color: $hover;
+        background-color: $hover;
+        color: $black;
+
+
         // .header__search-form
 
         &-form {
