@@ -300,7 +300,6 @@
         background-color: $hover;
         color: $black;
 
-
         // .header__search-form
 
         &-form {
@@ -364,6 +363,49 @@
                     @media (any-hover: hover) {
                         &:hover {
                             background-color: $accent_2;
+                        }
+                    }
+                }
+            }
+
+            // .header__search-form-resulst
+
+            &-resulst {
+                position: absolute;
+                top: 110%;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+                border: 1px solid $gray_2;
+                border-radius: 2px;
+                background-color: $white;
+                overflow: hidden;
+                overflow-y: auto;
+                max-height: 280px;
+
+                padding: 0.5em 0;
+
+                @media (any-hover: hover) {
+                    &::-webkit-scrollbar {
+                        width: 4px;
+                        background-color: $gray;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $accent;
+                    }
+                }
+                a {
+                    display: block;
+                    padding: 0.5em 1em;
+                    transition: all 0.3s ease 0s;
+
+                   
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            background-color: $hover;
+                            color: $white;
                         }
                     }
                 }

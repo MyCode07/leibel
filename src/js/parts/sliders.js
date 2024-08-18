@@ -24,7 +24,7 @@ if (sliders.length) {
                 },
             })
         }
-        if (slider.closest('.product__slider')) {
+        else if (slider.closest('.product__slider')) {
             let swiper = new Swiper(".thumbs-slider", {
                 loop: true,
                 spaceBetween: 10,

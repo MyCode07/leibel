@@ -614,6 +614,18 @@
             }
         }
     }
+
+    // .popup-standart
+
+    &-standart {
+        .popup__flex {
+            display: block;
+
+            @media (min-width: 541px) {
+                min-width: 500px;
+            }
+        }
+    }
 }
 
 body:has(header._sticky) {
@@ -886,13 +898,5 @@ body:has(header._sticky) {
         display: flex;
         flex-direction: column;
         height: 100%;
-
-        &__bottom {
-            margin-top: auto;
-
-            ._btn {
-                margin-top: 30px;
-            }
-        }
     }
 }

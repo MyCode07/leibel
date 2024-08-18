@@ -181,6 +181,32 @@
                             <div class="form__item" data-required="">
                                 <input type="text" name="your_mail" placeholder="E-mail адрес *">
                             </div>
+                            <div class="form__item" data-required>
+                                <span>Выбрать удобный способ звязи</span>
+                                <div class="form__checkboxes">
+                                    <label for="contact-tg">
+                                        <input type="checkbox" id="contact-tg" name="contact" value="tg">
+                                        <svg width="14" height="13" viewBox="0 0 14 13">
+                                            <use xlink:href='img/svg/icons.svg#tg' />
+                                        </svg>
+                                        <span>Whatsapp</span>
+                                    </label>
+                                    <label for="contact-wh">
+                                        <input type="checkbox" id="contact-wh" name="contact" value="wh">
+                                        <svg width="14" height="15" viewBox="0 0 14 15">
+                                            <use xlink:href='img/svg/icons.svg#wh' />
+                                        </svg>
+                                        <span>Telegram</span>
+                                    </label>
+                                    <label for="contact-phone">
+                                        <input type="checkbox" id="contact-phone" name="contact" value="phone">
+                                        <svg width="13" height="13" viewBox="0 0 13 13">
+                                            <use xlink:href='img/svg/icons.svg#phone' />
+                                        </svg>
+                                        <span>Позвонить</span>
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form__bottom">
                                 <button type="submit" class="_btn _btn-accent">
                                     <span>Отправить</span>
@@ -211,16 +237,24 @@
                 <h2>Преимущества работы с нами</h2>
                 <div class="grid grid-2">
                     <div class="advantages-item">
-                        <img src="img/advantages/adv-1.svg" alt="">
-                        <span>Эксперт 10-летним опытом работы</span>
-                    </div>
-                    <div class="advantages-item">
                         <img src="img/advantages/adv-2.svg" alt="">
                         <span>Идея, дизайн, визуализация</span>
                     </div>
                     <div class="advantages-item">
-                        <img src="img/advantages/adv-3.svg" alt="">
-                        <span>Гарантия лучшей цены</span>
+                        <img src="img/advantages/adv-8.svg" alt="">
+                        <span>Сборка, упаковка, доставка</span>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="img/advantages/adv-7.svg" alt="">
+                        <span>Оперативное коммерческое предложение</span>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="img/advantages/adv-9.svg" alt="">
+                        <span>Подготовка макета бесплатно</span>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="img/advantages/adv-6.svg" alt="">
+                        <span><b>Отдел контроля качества</b></span>
                     </div>
                     <div class="advantages-item">
                         <img src="img/advantages/adv-4.svg" alt="">
@@ -228,23 +262,7 @@
                     </div>
                     <div class="advantages-item">
                         <img src="img/advantages/adv-5.svg" alt="">
-                        <span>Каталог 80 000+ SKU</span>
-                    </div>
-                    <div class="advantages-item">
-                        <img src="img/advantages/adv-6.svg" alt="">
-                        <span>Отдел контроля качества</span>
-                    </div>
-                    <div class="advantages-item">
-                        <img src="img/advantages/adv-7.svg" alt="">
-                        <span>Оперативное коммерческое предложение</span>
-                    </div>
-                    <div class="advantages-item">
-                        <img src="img/advantages/adv-8.svg" alt="">
-                        <span>Сборка и упаковка под ключ</span>
-                    </div>
-                    <div class="advantages-item">
-                        <img src="img/advantages/adv-9.svg" alt="">
-                        <span>Подготовка макета бесплатно</span>
+                        <span>Каталог <b>80 000+</b> SKU</span>
                     </div>
                     <div class="advantages-item">
                         <img src="img/advantages/adv-10.svg" alt="">
@@ -319,13 +337,13 @@
                                     помощью сувенирной продукции с логотипом»</b>
                             </p>
                         </div>
-                        <div class="social">
-                            <a href="" target="_blank"><img src="img/icons/tg.svg" alt="">
-                            </a>
-                            <a href="" target="_blank"><img src="img/icons/wh.svg" alt="">
-                            </a>
+                        <div class="connection__content-contacts">
+                            <ul class="_socials-main">
+                                <li><a href="" target="_blank"><img src="img/icons/tg.svg" alt=""></a></li>
+                                <li><a href="" target="_blank"><img src="img/icons/wh.svg" alt=""></a></li>
+                            </ul>
+                            <button class="_btn _btn-white" data-open-popup data-id="appointment">Записаться</button>
                         </div>
-                        </ul>
                     </div>
                 </div>
             </div>

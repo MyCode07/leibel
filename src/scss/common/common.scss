@@ -190,7 +190,20 @@ picture {
         align-items: center;
         gap: 5px;
 
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            padding-inline: 15px;
+            width: 100vw;
+            margin-left: -15px;
+        }
+
         li {
+            flex: 0 0 auto;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -223,7 +236,7 @@ picture {
     }
 
     .swiper-slide {
-        width: 100% !important;
+        width: 100%;
         height: auto;
     }
 }
@@ -391,6 +404,7 @@ picture {
     &-white {
         color: $accent;
         background-color: $white;
+        border-color: $white;
 
         @media (any-hover: hover) {
             &:hover {
