@@ -796,6 +796,7 @@
     // .basket-cart__delete
 
     &__delete {
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
         gap: 10px;

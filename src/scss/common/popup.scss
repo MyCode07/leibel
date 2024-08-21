@@ -627,6 +627,22 @@
             }
         }
     }
+
+    &#thanks,
+    &#error {
+        .thanks__content-text {
+            flex: 1 1 auto;
+            padding-bottom: 50px;
+        }
+    }
+
+    &#error {
+        .thanks__content-text {
+            h4 {
+                color: red;
+            }
+        }
+    }
 }
 
 body:has(header._sticky) {
