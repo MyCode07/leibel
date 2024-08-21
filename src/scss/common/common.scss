@@ -450,6 +450,7 @@ picture {
     input {
         color: $text;
         text-align: center;
+        font-weight: 400;
 
         @media (max-width: 768px) {
             font-size: 14px;
