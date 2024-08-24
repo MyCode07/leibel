@@ -51,7 +51,7 @@
         }
 
         &:has(.form__checkboxes) {
-            height: auto;
+            height: auto !important;
 
             & > span {
                 opacity: 0.7;

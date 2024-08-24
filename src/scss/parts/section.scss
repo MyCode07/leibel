@@ -141,6 +141,12 @@
         }
     }
 
+    // .catalog__top
+
+    &__top {
+        @include adaptive-value("margin-bottom", 60, 30, 1);
+    }
+
     // .catalog__grid
 
     &__grid {
