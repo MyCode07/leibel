@@ -10,6 +10,7 @@ import { stickyHeader } from "./parts/header.js";
 
 import './parts/personVideo.js'
 import './parts/quantity.js'
+import './parts/forms.js'
 
 stickyHeader();
 range();

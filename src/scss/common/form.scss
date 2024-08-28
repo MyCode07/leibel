@@ -58,6 +58,19 @@
                 display: block;
                 margin-bottom: 17px;
             }
+
+            &._error {
+                color: red;
+                border-color: red;
+            }
+        }
+
+        &._error {
+            input,
+            textarea {
+                color: red;
+                border-color: red;
+            }
         }
     }
 
@@ -101,6 +114,10 @@
                 &:hover {
                     background-color: $hover;
                 }
+            }
+
+            &:has(input:checked) {
+                background-color: $hover;
             }
         }
     }
@@ -166,6 +183,16 @@
                     width: 12px;
                     height: 8px;
                     transition: opacity 0.3s ease 0s;
+                }
+            }
+
+            &._error {
+                span {
+                    color: red;
+                }
+
+                .checkbox {
+                    border-color: red;
                 }
             }
         }

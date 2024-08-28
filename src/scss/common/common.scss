@@ -605,3 +605,36 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+.added-to-cart-msg {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 11;
+    background-color: $accent;
+    box-shadow: 0px 0px 1px 1px rgba($color: $white, $alpha: 0.15);
+    padding: 1em 2em;
+    border-radius: 4px;
+    color: $white;
+    font-weight: 500;
+    text-align: center;
+    @include adaptive-value("font-size", 20, 16, 1);
+
+    transition: all 0.3s ease 0s;
+
+    transform: translate(calc(100% + 50px), 0);
+    opacity: 0;
+    pointer-events: none;
+
+    @media (max-width: 1024px) {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        transform: translate(0, calc(100% + 30px));
+    }
+
+    &._active {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

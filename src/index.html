@@ -181,25 +181,25 @@
                             <div class="form__item" data-required="">
                                 <input type="text" name="your_mail" placeholder="E-mail адрес *">
                             </div>
-                            <div class="form__item" data-required>
+                            <div class="form__item" data-checkbox-container>
                                 <span>Выбрать удобный способ звязи</span>
                                 <div class="form__checkboxes">
                                     <label for="contact-tg">
-                                        <input type="checkbox" id="contact-tg" name="contact" value="tg">
+                                        <input type="radio" id="contact-tg" name="contact" value="tg">
                                         <svg width="14" height="13" viewBox="0 0 14 13">
                                             <use xlink:href='img/svg/icons.svg#tg' />
                                         </svg>
                                         <span>Whatsapp</span>
                                     </label>
                                     <label for="contact-wh">
-                                        <input type="checkbox" id="contact-wh" name="contact" value="wh">
+                                        <input type="radio" id="contact-wh" name="contact" value="wh">
                                         <svg width="14" height="15" viewBox="0 0 14 15">
                                             <use xlink:href='img/svg/icons.svg#wh' />
                                         </svg>
                                         <span>Telegram</span>
                                     </label>
                                     <label for="contact-phone">
-                                        <input type="checkbox" id="contact-phone" name="contact" value="phone">
+                                        <input type="radio" id="contact-phone" name="contact" value="phone">
                                         <svg width="13" height="13" viewBox="0 0 13 13">
                                             <use xlink:href='img/svg/icons.svg#phone' />
                                         </svg>
@@ -224,6 +224,8 @@
                                     <span>Даю согласие на обработку <a href="">персональных данных</a> </span>
                                 </label>
                             </div>
+                            <input type="hidden" value="Оставить заявку" name="title">
+                            <input type="hidden" value="Текущий url" name="page_url">
                         </form>
                     </div>
                 </div>
