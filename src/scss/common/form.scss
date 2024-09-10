@@ -102,22 +102,36 @@
                 visibility: hidden;
             }
 
+            color: $white;
+
             img,
             svg {
                 width: 1em;
                 height: 1em;
                 flex: 0 0 auto;
-                fill: $black;
+                fill: $white;
+            }
+
+            &:has(input:checked) {
+                background-color: $hover;
+            }
+
+            &[for="contact-tg"] {
+                background-color: #53a1d2;
+            }
+
+            &[for="contact-wh"] {
+                background-color: #49c858;
+            }
+
+            &[for="contact-phone"] {
+                background-color: $accent;
             }
 
             @media (any-hover: hover) {
                 &:hover {
                     background-color: $hover;
                 }
-            }
-
-            &:has(input:checked) {
-                background-color: $hover;
             }
         }
     }

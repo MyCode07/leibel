@@ -5,27 +5,53 @@
         margin-bottom: 15px;
     }
 
-    .grid {
-        display: flex;
-        align-items: center;
-        gap: 15px;
+    // .filters-area__block
 
-        @media (max-width: 600px) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+    &__block {
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
             gap: 10px;
         }
     }
 
-    .filter-fast {
-        @media (min-width: 601px) {
-            flex: 1 1 180px;
-            max-width: 180px;
+    .bx-filter {
+        flex: 1 1 auto;
+    }
+
+    .bx-section-desc {
+        display: none;
+    }
+
+    .grid,
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        .clb {
+            position: absolute;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    & > .grid {
+        @media (max-width: 768px) {
+            display: block;
+
+            .grid {
+                display: grid !important;
+            }
         }
     }
 
     .filter-sort {
-        @media (min-width: 601px) {
+        @media (min-width: 769px) {
+            flex: 1 1 180px;
+            max-width: 180px;
             margin-left: auto;
         }
     }
@@ -202,6 +228,7 @@
             max-width: calc(100% - 20px);
             overflow: hidden;
             text-overflow: ellipsis;
+            flex: 1 1 auto;
         }
 
         svg {
@@ -340,5 +367,557 @@
     ins {
         text-decoration: none;
         font-size: 14px;
+    }
+}
+
+.filters-area {
+    label:has(span[title]) {
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            flex: 0 0 auto;
+        }
+    }
+
+    label:has(span[title="алый"]):after {
+        background-color: red;
+    }
+
+    label:has(span[title="бирюзовый"]):after {
+        background-color: #36d6c9;
+    }
+    label:has(span[title="бордовый"]):after {
+        background-color: #620b17;
+    }
+    label:has(span[title="голубой"]):after {
+        background-color: #0ac2fe;
+    }
+    label:has(span[title="горчичный"]):after {
+        background-color: #e0bd2f;
+    }
+
+    label:has(span[title="золотистый"]):after {
+        background-color: #fafad2;
+    }
+    label:has(span[title="коричневый"]):after {
+        background-color: #814000;
+    }
+
+    label:has(span[title="кремовый"]):after {
+        background-color: #fffacd;
+    }
+    label:has(span[title="лимонный"]):after {
+        background-color: #ffdd02;
+    }
+    label:has(span[title="неокрашенный"]):after {
+        border: 1px solid #000;
+    }
+
+    label:has(span[title="песочный"]):after {
+        background-color: #e6c276;
+    }
+    label:has(span[title="прозрачный"]):after {
+        border: 1px solid #000;
+    }
+
+    label:has(span[title="салатовый"]):after {
+        background-color: #c4ff00;
+    }
+    label:has(span[title="светлый меланж"]):after {
+        background-color: #d9d9d9;
+    }
+    label:has(span[title="серебристый"]):after {
+        background-color: #afaeb2;
+    }
+
+    label:has(span[title="сиреневый"]):after {
+        background-color: #ddb8f1;
+    }
+    label:has(span[title="стальной"]):after {
+        background-color: #cacbcd;
+    }
+    label:has(span[title="темно-зеленый"]):after {
+        background-color: #093827;
+    }
+    label:has(span[title="темно-синий"]):after {
+        background-color: #09088e;
+    }
+    label:has(span[title="фиолетовый"]):after {
+        background-color: #7511b8;
+    }
+    label:has(span[title="фуксия"]):after {
+        background-color: #fd13e4;
+    }
+    label:has(span[title="хаки"]):after {
+        background-color: #92a760;
+    }
+
+    label:has(span[title="черный"]):after {
+        background-color: #000000;
+    }
+    label:has(span[title="серый"]):after {
+        background-color: #808080;
+    }
+    label:has(span[title="серебряный"]):after {
+        background-color: #c0c0c0;
+    }
+    label:has(span[title="белый"]):after {
+        background-color: #ffffff;
+        border: 1px solid #000;
+    }
+    label:has(span[title="фуксия, маджента"]):after {
+        background-color: #ff00ff;
+    }
+    label:has(span[title="пурпурный"]):after {
+        background-color: #800080;
+    }
+    label:has(span[title="красный"]):after {
+        background-color: #ff0000;
+    }
+    label:has(span[title="коричнево-малиновый"]):after {
+        background-color: #800000;
+    }
+    label:has(span[title="желтый"]):after {
+        background-color: #ffff00;
+    }
+    label:has(span[title="оливковый"]):after {
+        background-color: #808000;
+    }
+    label:has(span[title="лайм"]):after {
+        background-color: #00ff00;
+    }
+    label:has(span[title="зеленый"]):after {
+        background-color: #008000;
+    }
+    label:has(span[title="цвет морской волны"]):after {
+        background-color: #00ffff;
+    }
+    label:has(span[title="окраски птицы чирок"]):after {
+        background-color: #008080;
+    }
+    label:has(span[title="синий"]):after {
+        background-color: #0000ff;
+    }
+    label:has(span[title="форма морских офицеров"]):after {
+        background-color: #000080;
+    }
+    label:has(span[title="дымчато-белый"]):after {
+        background-color: #f5f5f5;
+    }
+    label:has(span[title="гейнсборо"]):after {
+        background-color: #dcdcdc;
+    }
+    label:has(span[title="светло серый"]):after {
+        background-color: #d3d3d3;
+    }
+    label:has(span[title="серебряный"]):after {
+        background-color: #c0c0c0;
+    }
+    label:has(span[title="темно серый"]):after {
+        background-color: #a9a9a9;
+    }
+    label:has(span[title="серый"]):after {
+        background-color: #808080;
+    }
+    label:has(span[title="тусклый серый"]):after {
+        background-color: #696969;
+    }
+    label:has(span[title="светлый аспидно-серый"]):after {
+        background-color: #778899;
+    }
+    label:has(span[title="серый шифер"]):after {
+        background-color: #708090;
+    }
+    label:has(span[title="аспидно-серый"]):after {
+        background-color: #2f4f4f;
+    }
+    label:has(span[title="черный"]):after {
+        background-color: #000000;
+    }
+    label:has(span[title="светло-коралловый"]):after {
+        background-color: #f08080;
+    }
+    label:has(span[title="лососевый"]):after {
+        background-color: #fa8072;
+    }
+    label:has(span[title="темно-лососевый"]):after {
+        background-color: #e9967a;
+    }
+    label:has(span[title="светло-лососевый"]):after {
+        background-color: #ffa07a;
+    }
+    label:has(span[title="малиновый"]):after {
+        background-color: #dc143c;
+    }
+    label:has(span[title="красный"]):after {
+        background-color: #ff0000;
+    }
+    label:has(span[title="индийский красный"]):after {
+        background-color: #cd5c5c;
+    }
+    label:has(span[title="кирпичный"]):after {
+        background-color: #b22222;
+    }
+    label:has(span[title="коричнево-бордовый"]):after {
+        background-color: #a52a2a;
+    }
+    label:has(span[title="темно-красный"]):after {
+        background-color: #8b0000;
+    }
+    label:has(span[title="коричнево-малиновый"]):after {
+        background-color: #800000;
+    }
+    label:has(span[title="цвет морской раковины"]):after {
+        background-color: #fff5ee;
+    }
+    label:has(span[title="бежевый"]):after {
+        background-color: #f5f5dc;
+    }
+    label:has(span[title="старое кружево"]):after {
+        background-color: #fdf5e6;
+    }
+    label:has(span[title="цветочный белый"]):after {
+        background-color: #fffaf0;
+    }
+    label:has(span[title="белый антик"]):after {
+        background-color: #faebd7;
+    }
+    label:has(span[title="льняной"]):after {
+        background-color: #faf0e6;
+    }
+    label:has(span[title="очищенный миндаль"]):after {
+        background-color: #ffebcd;
+    }
+    label:has(span[title="бисквитный"]):after {
+        background-color: #ffe4c4;
+    }
+    label:has(span[title="белый навахо"]):after {
+        background-color: #ffdead;
+    }
+    label:has(span[title="пшеничный"]):after {
+        background-color: #f5deb3;
+    }
+    label:has(span[title="плотная древесина"]):after {
+        background-color: #deb887;
+    }
+    label:has(span[title="цвет загара"]):after {
+        background-color: #d2b48c;
+    }
+    label:has(span[title="красный песок"]):after {
+        background-color: #f4a460;
+    }
+    label:has(span[title="золотисто-березовый"]):after {
+        background-color: #daa520;
+    }
+    label:has(span[title="темный золотарник"]):after {
+        background-color: #b8860b;
+    }
+    label:has(span[title="перу"]):after {
+        background-color: #cd853f;
+    }
+    label:has(span[title="шоколадный"]):after {
+        background-color: #d2691e;
+    }
+    label:has(span[title="кожаного седла для лошади"]):after {
+        background-color: #8b4513;
+    }
+    label:has(span[title="сиена"]):after {
+        background-color: #a0522d;
+    }
+    label:has(span[title="светлый сомон"]):after {
+        background-color: #ffa07a;
+    }
+    label:has(span[title="коралловый"]):after {
+        background-color: #ff7f50;
+    }
+    label:has(span[title="томатный"]):after {
+        background-color: #ff6347;
+    }
+    label:has(span[title="оранжево-красный"]):after {
+        background-color: #ff4500;
+    }
+    label:has(span[title="темно-оранжевый"]):after {
+        background-color: #ff8c00;
+    }
+    label:has(span[title="оранжевый"]):after {
+        background-color: #ffa500;
+    }
+    label:has(span[title="цвет пестиков неспелой кукурузы"]):after {
+        background-color: #fff8dc;
+    }
+    label:has(span[title="слоновая кость"]):after {
+        background-color: #fffff0;
+    }
+    label:has(span[title="светло-желтый"]):after {
+        background-color: #ffffe0;
+    }
+    label:has(span[title="лимонно-кремовый"]):after {
+        background-color: #fffacd;
+    }
+    label:has(span[title="светло-желтый золотистый"]):after {
+        background-color: #fafad2;
+    }
+    label:has(span[title="побег папайи"]):after {
+        background-color: #ffefd5;
+    }
+    label:has(span[title="мокасиновый"]):after {
+        background-color: #ffe4b5;
+    }
+    label:has(span[title="темно-персиковый"]):after {
+        background-color: #ffdab9;
+    }
+    label:has(span[title="бледно-золотистый"]):after {
+        background-color: #eee8aa;
+    }
+    label:has(span[title="светлый хаки"]):after {
+        background-color: #f0e68c;
+    }
+    label:has(span[title="темный хаки"]):after {
+        background-color: #bdb76b;
+    }
+    label:has(span[title="желтый"]):after {
+        background-color: #ffff00;
+    }
+    label:has(span[title="золотой"]):after {
+        background-color: #ffd700;
+    }
+    label:has(span[title="медовая роса"]):after {
+        background-color: #f0fff0;
+    }
+    label:has(span[title="мятно-кремовый"]):after {
+        background-color: #f5fffa;
+    }
+    label:has(span[title="зелено-желтый"]):after {
+        background-color: #adff2f;
+    }
+    label:has(span[title="шартрез"]):after {
+        background-color: #7fff00;
+    }
+    label:has(span[title="зеленая лужайка"]):after {
+        background-color: #7cfc00;
+    }
+    label:has(span[title="лайм"]):after {
+        background-color: #00ff00;
+    }
+    label:has(span[title="лаймово-зеленый"]):after {
+        background-color: #32cd32;
+    }
+    label:has(span[title="бледный зеленый"]):after {
+        background-color: #98fb98;
+    }
+    label:has(span[title="светло-зеленый"]):after {
+        background-color: #90ee90;
+    }
+    label:has(span[title="умеренный весенний зеленый"]):after {
+        background-color: #00fa9a;
+    }
+    label:has(span[title="весенне-зеленый"]):after {
+        background-color: #00ff7f;
+    }
+    label:has(span[title="умеренно-зеленое море"]):after {
+        background-color: #3cb371;
+    }
+    label:has(span[title="зеленое море"]):after {
+        background-color: #2e8b57;
+    }
+    label:has(span[title="лесной зеленый"]):after {
+        background-color: #228b22;
+    }
+    label:has(span[title="зеленый"]):after {
+        background-color: #008000;
+    }
+    label:has(span[title="очень темный лимонный зеленый"]):after {
+        background-color: #006400;
+    }
+    label:has(span[title="желто-зеленый"]):after {
+        background-color: #9acd32;
+    }
+    label:has(span[title="нежно-оливковый"]):after {
+        background-color: #6b8e23;
+    }
+    label:has(span[title="оливковый"]):after {
+        background-color: #808000;
+    }
+    label:has(span[title="темный оливково-зеленый"]):after {
+        background-color: #556b2f;
+    }
+    label:has(span[title="умеренный аквамариновый"]):after {
+        background-color: #66cdaa;
+    }
+    label:has(span[title="темное зеленое море"]):after {
+        background-color: #8fbc8f;
+    }
+    label:has(span[title="светлое зеленое море"]):after {
+        background-color: #20b2aa;
+    }
+    label:has(span[title="темный циан"]):after {
+        background-color: #008b8b;
+    }
+    label:has(span[title="окраски птицы чирок"]):after {
+        background-color: #008080;
+    }
+    label:has(span[title="небесная лазурь"]):after {
+        background-color: #f0ffff;
+    }
+    label:has(span[title="синяя элис"]):after {
+        background-color: #f0f8ff;
+    }
+    label:has(span[title="светлый циан"]):after {
+        background-color: #e0ffff;
+    }
+    label:has(span[title="циан,цвет морской волны"]):after {
+        background-color: #00ffff;
+    }
+    label:has(span[title="аквамариновый"]):after {
+        background-color: #7fffd4;
+    }
+    label:has(span[title="светло-бирюзовый"]):after {
+        background-color: #40e0d0;
+    }
+    label:has(span[title="умеренно-бирюзовый"]):after {
+        background-color: #48d1cc;
+    }
+    label:has(span[title="темно-бирюзовый"]):after {
+        background-color: #00ced1;
+    }
+    label:has(span[title="бледно-синий"]):after {
+        background-color: #afeeee;
+    }
+    label:has(span[title="пыльный голубой"]):after {
+        background-color: #b0e0e6;
+    }
+    label:has(span[title="светлый синий"]):after {
+        background-color: #add8e6;
+    }
+    label:has(span[title="светлый стальной синий"]):after {
+        background-color: #b0c4de;
+    }
+    label:has(span[title="городское небо"]):after {
+        background-color: #87ceeb;
+    }
+    label:has(span[title="светло-голубой"]):after {
+        background-color: #87cefa;
+    }
+    label:has(span[title="морозное небо"]):after {
+        background-color: #00bfff;
+    }
+    label:has(span[title="защитно-синий"]):after {
+        background-color: #1e90ff;
+    }
+    label:has(span[title="васильковый"]):after {
+        background-color: #6495ed;
+    }
+    label:has(span[title="умеренный аспидно-синий"]):after {
+        background-color: #7b68ee;
+    }
+    label:has(span[title="кадетский синий"]):after {
+        background-color: #5f9ea0;
+    }
+    label:has(span[title="синяя сталь"]):after {
+        background-color: #4682b4;
+    }
+    label:has(span[title="королевский синий"]):after {
+        background-color: #4169e1;
+    }
+    label:has(span[title="синий"]):after {
+        background-color: #0000ff;
+    }
+    label:has(span[title="средний синий"]):after {
+        background-color: #0000cd;
+    }
+    label:has(span[title="темный ультрамариновый"]):after {
+        background-color: #00008b;
+    }
+    label:has(span[title="формы морских офицеров"]):after {
+        background-color: #000080;
+    }
+    label:has(span[title="полуночный черный"]):after {
+        background-color: #191970;
+    }
+    label:has(span[title="аспидно-синий"]):after {
+        background-color: #6a5acd;
+    }
+    label:has(span[title="темный аспидно-синий"]):after {
+        background-color: #483d8b;
+    }
+    label:has(span[title="призрачно-белый"]):after {
+        background-color: #f8f8ff;
+    }
+    label:has(span[title="лаванда"]):after {
+        background-color: #e6e6fa;
+    }
+    label:has(span[title="чертополох"]):after {
+        background-color: #d8bfd8;
+    }
+    label:has(span[title="светлая слива"]):after {
+        background-color: #dda0dd;
+    }
+    label:has(span[title="розово-фиолетовый"]):after {
+        background-color: #ee82ee;
+    }
+    label:has(span[title="орхидея"]):after {
+        background-color: #da70d6;
+    }
+    label:has(span[title="фуксия,маджента"]):after {
+        background-color: #ff00ff;
+    }
+    label:has(span[title="умеренный фиолетово-красный"]):after {
+        background-color: #c71585;
+    }
+    label:has(span[title="умеренный цвет орхидеи"]):after {
+        background-color: #ba55d3;
+    }
+    label:has(span[title="умеренный пурпурный"]):after {
+        background-color: #9370db;
+    }
+    label:has(span[title="сине-лиловый"]):after {
+        background-color: #8a2be2;
+    }
+    label:has(span[title="темно-фиолетовый"]):after {
+        background-color: #9400d3;
+    }
+    label:has(span[title="темная орхидея"]):after {
+        background-color: #9932cc;
+    }
+    label:has(span[title="темный маджента"]):after {
+        background-color: #8b008b;
+    }
+    label:has(span[title="пурпурный"]):after {
+        background-color: #800080;
+    }
+    label:has(span[title="индиго"]):after {
+        background-color: #4b0082;
+    }
+    label:has(span[title="белоснежный"]):after {
+        background-color: #fffafa;
+    }
+    label:has(span[title="розово-лавандовый"]):after {
+        background-color: #fff0f5;
+    }
+    label:has(span[title="тускло-розовый"]):after {
+        background-color: #ffe4e1;
+    }
+    label:has(span[title="розовый"]):after {
+        background-color: #ffc0cb;
+    }
+    label:has(span[title="светло-розовый"]):after {
+        background-color: #ffb6c1;
+    }
+    label:has(span[title="ярко-розовый"]):after {
+        background-color: #ff69b4;
+    }
+    label:has(span[title="глубокий розовый"]):after {
+        background-color: #ff1493;
+    }
+    label:has(span[title="лиловый"]):after {
+        background-color: #db7093;
+    }
+    label:has(span[title="розово-коричневый"]):after {
+        background-color: #bc8f8f;
     }
 }

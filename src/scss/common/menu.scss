@@ -97,15 +97,24 @@
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
+                justify-content: space-between;
+
+                button {
+                    width: 30px;
+                }
 
                 svg {
                     transition: all 0.3s ease 0s;
                     stroke: currentColor;
+                    pointer-events: none;
+                    width: 12px;
+                    margin-left: auto;
                 }
 
                 a {
                     margin-right: 15px;
                     transition: all 0.3s ease 0s;
+                    max-width: calc(100% - 60px);
                 }
 
                 ul {
@@ -239,10 +248,12 @@
 
             ._socials {
                 a {
-                    background-color: $accent;
+                    background-color: unset !important;
 
+                    img,
                     svg {
-                        fill: $white;
+                        width: 100% !important;
+                        height: 100% !important;
                     }
                 }
             }

@@ -30,7 +30,7 @@ body {
 main {
     flex: 1 1 auto;
 
-    @include adaptive-value("padding-top", 143, 103, 1);
+    @include adaptive-value("padding-top", 156, 121, 1);
 }
 
 ._container {
@@ -94,6 +94,15 @@ picture {
             &:hover {
                 opacity: 0.7;
             }
+        }
+    }
+
+    h2 {
+        display: block !important;
+        line-height: 1;
+
+        @media (min-width: 1025px) {
+            margin-top: -10px;
         }
     }
 
@@ -494,6 +503,8 @@ picture {
     z-index: 10;
     bottom: 40px;
     right: 40px;
+
+    display: none;
 
     @media (max-width: 768px) {
         width: 60px;

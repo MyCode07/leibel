@@ -10,13 +10,16 @@ import { stickyHeader } from "./parts/header.js";
 
 import './parts/personVideo.js'
 import './parts/quantity.js'
-import './parts/forms.js'
+import { toTop } from "./static/to-top.js";
+import { Fancybox } from "@fancyapps/ui";
+
 
 stickyHeader();
 range();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
+toTop();
 
-import { Fancybox } from "@fancyapps/ui";
+
 Fancybox.bind("[data-fancybox]", {
     Carousel: {
         Panzoom: {
@@ -41,6 +44,19 @@ if (inputItems.length) {
     })
 }
 
+function duobleOrderTotal() {
+    const totalElem = document.querySelector('[data-entity="basket-total-price"]');
+    let price = 0;
+    setInterval(() => {
+        if (totalElem) {
+            price = totalElem.textContent;
+        }
+        document.querySelectorAll('#total-double').textContent = price
+    }, 16);
+}
+duobleOrderTotal();
+
+
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
@@ -48,3 +64,18 @@ document.addEventListener('click', function (e) {
         document.querySelector('.pages').classList.toggle('_hide');
     }
 })
+
+
+const elems = document.querySelectorAll('.text section tbody tr');
+let colors = ''
+elems.forEach(item => {
+    const td = item.querySelectorAll('td')
+    if (td) {
+        let text = `label:has(span[title="${(td[0].textContent).toLocaleLowerCase()}"]):after {
+        background-color: ${td[2].textContent};
+    }`
+        colors += text
+    }
+})
+
+console.log(colors);

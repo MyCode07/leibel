@@ -1,76 +1,3 @@
-.hero {
-    @include adaptive-value("margin-bottom", 100, 60, 1);
-
-    // .hero__body
-
-    &__body {
-    }
-
-    // .hero__image
-
-    &__image {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 30px;
-        border-radius: 4px;
-        overflow: hidden;
-
-        @include adaptive-value("height", 600, 380, 1);
-
-        @media (max-width: 1024px) {
-            padding: 20px 15px;
-        }
-
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            object-fit: cover;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        &:before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-
-            border-radius: 4px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) -5.62%, rgba(0, 0, 0, 0) 24.46%);
-            pointer-events: none;
-            z-index: 1;
-
-            @media (max-width: 768px) {
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) -5.62%, rgba(0, 0, 0, 0) 100%);
-            }
-        }
-
-        h1 {
-            position: relative;
-            z-index: 2;
-        }
-
-        svg {
-            @include adaptive-value("width", 150, 100, 1);
-            @include adaptive-value("height", 30, 20, 1);
-            margin-left: auto;
-            position: relative;
-            z-index: 2;
-        }
-    }
-
-    h1 {
-        margin-top: auto;
-    }
-}
-
 .section {
     @include adaptive-value("margin-bottom", 100, 60, 1);
 
@@ -112,6 +39,15 @@
     }
 }
 
+body:has(.section.product) {
+    .pages-hero {
+        h1 {
+            @include adaptive-value("font-size", 42, 22, 1);
+            max-width: 900px;
+        }
+    }
+}
+
 .catalog {
     h2 {
         @media (max-width: 1024px) {
@@ -132,8 +68,9 @@
             margin-bottom: 30px;
             color: $text;
             text-align: center;
-            @include adaptive-value("font-size", 30, 20, 1);
             line-height: 90%;
+            @include adaptive-value("font-size", 42, 24, 1);
+            font-family: "PT Serif";
 
             @media (max-width: 1024px) {
                 margin-bottom: 20px;
@@ -259,6 +196,12 @@
 
         @media (max-width: 768px) {
             min-height: 320px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .slider__content {
+            padding: 20px 15px;
         }
     }
 
@@ -518,8 +461,10 @@
         img {
             width: 100%;
             object-fit: contain;
+            height: 200px;
 
             @media (max-width: 1024px) {
+                height: 150px;
             }
         }
     }
@@ -1007,6 +952,8 @@
                 font-weight: 600;
                 @include adaptive-value("font-size", 18, 16, 1);
             }
+
+            display: none;
         }
     }
 
@@ -1015,8 +962,11 @@
     &__content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         gap: 15px;
+
+        @media (min-width: 769px) {
+            padding-top: 30px;
+        }
 
         p {
             color: $text;
@@ -1024,7 +974,9 @@
         }
 
         h5 {
-            margin-top: auto;
+            @media (min-width: 769px) {
+                @include adaptive-value("margin-top", 100, 0, 1);
+            }
         }
     }
 }
@@ -1161,8 +1113,16 @@
     &__content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 30px;
+        gap: 60px;
+
+        @media (min-width: 769px) {
+            flex: 1 1 auto;
+            width: 50%;
+        }
+
+        @media (max-width: 1024px) {
+            gap: 30px;
+        }
 
         // .product__content-center
 
@@ -1173,6 +1133,11 @@
                 @media (max-width: 768px) {
                     margin-bottom: 20px;
                 }
+            }
+
+            h3 {
+                @include adaptive-value("font-size", 30, 20, 1);
+                font-weight: 600;
             }
         }
 
@@ -1379,6 +1344,8 @@
     ._main-info {
         color: $accent;
         border-color: $accent;
+
+        display: none;
     }
 }
 
@@ -1396,7 +1363,10 @@
         }
     }
 
-    .form {
+    // .basket-form
+
+    &-form {
+        flex: 0 0 auto;
         width: 100%;
         border: 1px solid $gray;
         padding: 15px;
@@ -1404,7 +1374,9 @@
         @media (min-width: 769px) {
             max-width: 360px;
         }
+    }
 
+    .form {
         h3 {
             text-align: center;
         }
@@ -1466,5 +1438,11 @@
         & > :not(:last-child) {
             margin-bottom: 20px;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page + .clients h2 {
+        display: none;
     }
 }
