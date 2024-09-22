@@ -1089,6 +1089,7 @@ body:has(.section.product) {
             .swiper-slide {
                 height: 100px;
                 opacity: 0.4;
+                cursor: pointer;
 
                 @media (max-width: 768px) {
                     height: 80px;

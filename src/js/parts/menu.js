@@ -45,6 +45,7 @@ const arrow = `<button><svg class="catalog-arrow" width="12" height="7" viewBox=
 // add menu summenu opener button
 const submenuList = document.querySelectorAll('nav ul li');
 if (submenuList.length) {
+
     submenuList.forEach(li => {
         const submenu = li.querySelector('ul');
         const link = li.querySelector('a');

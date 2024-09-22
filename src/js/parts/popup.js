@@ -22,6 +22,14 @@ document.addEventListener('click', function (e) {
         const popup = targetEl.closest('.popup');
         closePopup(popup)
     }
+
+    if (targetEl.classList.contains('callback-widget__open')) {
+        targetEl.closest('.callback-widget').classList.toggle('_open');
+    }
+
+    if (!targetEl.closest('.callback-widget') && !targetEl.classList.contains('callback-widget') && document.querySelector('.callback-widget._open')) {
+        document.querySelector('.callback-widget._open').classList.remove('_open');
+    }
 })
 
 

@@ -179,3 +179,7 @@ body:has(.basket-order-received) {
         }
     }
 }
+
+div.title-search-result {
+    overflow: unset !important;
+}

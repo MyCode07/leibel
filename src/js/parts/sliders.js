@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Autoplay, Thumbs } from 'swiper/modules';
+import { Pagination, Autoplay, Thumbs, FreeMode, Scrollbar } from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
@@ -41,16 +41,22 @@ if (sliders.length) {
         }
         else if (slider.closest('.product__slider')) {
             let swiper = new Swiper(".thumbs-slider", {
-                loop: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
+                modules: [
+                    FreeMode, Pagination
+                ],
                 freeMode: true,
                 watchSlidesProgress: true,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                spaceBetween: 10,
+                slidesPerView: 4,
             });
 
             let swiper2 = new Swiper(".main-slider", {
-                modules: [Pagination, Thumbs],
-                loop: true,
+                modules: [Pagination, Thumbs, Scrollbar],
+                slidesPerView: 1,
                 spaceBetween: 10,
                 pagination: {
                     el: pagination,
