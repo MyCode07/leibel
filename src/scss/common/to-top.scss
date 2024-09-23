@@ -2,8 +2,8 @@
     position: fixed;
     @include adaptive-value("right", 50, 15, 1);
     @include adaptive-value("bottom", 50, 15, 1);
-    @include adaptive-value("width", 60, 40, 1);
-    @include adaptive-value("height", 60, 40, 1);
+    @include adaptive-value("width", 50, 40, 1);
+    @include adaptive-value("height", 50, 40, 1);
     border-radius: 50%;
     background-color: $accent;
     z-index: 10;

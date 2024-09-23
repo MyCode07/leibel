@@ -25,6 +25,15 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.classList.contains('callback-widget__open')) {
         targetEl.closest('.callback-widget').classList.toggle('_open');
+        targetEl.closest('.callback-widget').classList.remove('_show-text');
+    }
+
+    if (targetEl.classList.contains('callback-widget__text')) {
+        targetEl.closest('.callback-widget').classList.remove('_show-text');
+    }
+
+    if (!targetEl.closest('.callback-widget') && !targetEl.classList.contains('callback-widget') && document.querySelector('.callback-widget._show-text')) {
+        document.querySelector('.callback-widget._show-text').classList.remove('_show-text');
     }
 
     if (!targetEl.closest('.callback-widget') && !targetEl.classList.contains('callback-widget') && document.querySelector('.callback-widget._open')) {
@@ -36,4 +45,9 @@ document.addEventListener('click', function (e) {
 function closePopup(popup) {
     popup.classList.remove('_open')
     unLockPadding();
+}
+
+const callbackWidget = document.querySelector('.callback-widget')
+if (callbackWidget) {
+    callbackWidget.classList.add('_show-text')
 }
